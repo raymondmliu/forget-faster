@@ -5,6 +5,7 @@ import numpy
 
 open(f'half_life.csv', "w").close()
 
+# Map of year -> half-life of year
 data = {}
 
 for x in range(1875, 1976):
@@ -30,8 +31,8 @@ for x in range(1875, 1976):
 
 	data[x] = (mid_year - peak_year)
 
-plt.plot(list(data.keys()), list(data.values()))
-plt.show()
+	write_file = open(f'half_life.csv', 'a')
+	write_file.write(f'{x},{data[x]}\n')
 
 print(data)
 	
