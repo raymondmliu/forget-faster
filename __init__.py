@@ -10,7 +10,7 @@ half_lives = []
 frequencies = []
 # range(MIN_YEAR, MAX_YEAR+1)
 
-for year in [1881, 1886, 1891]:
+for year in [1881, 1925, 1975]:
     with open(f"processed_data/{year}.csv") as f:
         cur_freq = []
         for line in f:
@@ -22,7 +22,7 @@ for year in [1881, 1886, 1891]:
 with open("half_life.csv") as f:
     for line in f:
         year, half_life = line.split(',')
-        half_lives.append(int(half_life))
+        half_lives.append(float(half_life))
 
 plt.figure(1)
 plt.plot(years, frequencies[0], years, frequencies[1], years, frequencies[2])
